@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>PriceOn — 60-Second Crypto Price Prediction on Telegram</title>
-<meta name="description" content="Predict whether SOL goes UP or DOWN in a 60-second round, right inside Telegram. Start in Demo mode with virtual SOL, go Live when you're ready.">
+<title>PriceOn — 1-Minute Crypto Price Prediction on Telegram</title>
+<meta name="description" content="Call SOL UP or DOWN in 15 seconds and see the result 45 seconds later — right inside Telegram. Start in Demo with virtual SOL, go Live when you're ready.">
 <meta name="theme-color" content="#0a0b10">
 <link rel="canonical" href="https://priceon.tech/">
 <link rel="alternate" hreflang="en" href="https://priceon.tech/">
@@ -14,8 +14,8 @@
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="PriceOn">
-<meta property="og:title" content="PriceOn — 60-Second Crypto Price Prediction on Telegram">
-<meta property="og:description" content="Call UP or DOWN, wait 60 seconds, see the result. Start in Demo, inside Telegram.">
+<meta property="og:title" content="PriceOn — 1-Minute Crypto Price Prediction on Telegram">
+<meta property="og:description" content="15s to call it. 45s to settle. Inside Telegram — start in Demo.">
 <meta property="og:url" content="https://priceon.tech/">
 <meta property="og:image" content="https://priceon.tech/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -23,10 +23,10 @@
 <link rel="stylesheet" href="style.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"SoftwareApplication","name":"PriceOn","applicationCategory":"GameApplication","operatingSystem":"Telegram","url":"https://priceon.tech/","description":"A 60-second crypto price prediction Mini App inside Telegram. Call UP or DOWN on SOL/USDC, start in Demo mode, go Live on Solana when ready."},
+{"@type":"SoftwareApplication","name":"PriceOn","applicationCategory":"GameApplication","operatingSystem":"Telegram","url":"https://priceon.tech/","description":"A one-minute crypto price prediction Mini App inside Telegram: 15 seconds to call UP or DOWN on SOL/USDC, 45 seconds to settle. Start in Demo, go Live on Solana when ready."},
 {"@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"What is PriceOn?","acceptedAnswer":{"@type":"Answer","text":"PriceOn is a 60-second crypto price prediction game that runs as a Mini App inside Telegram. You predict whether the price closes above or below the round's start price."}},
-{"@type":"Question","name":"How long is a round?","acceptedAnswer":{"@type":"Answer","text":"60 seconds."}},
+{"@type":"Question","name":"What is PriceOn?","acceptedAnswer":{"@type":"Answer","text":"PriceOn is a one-minute crypto price prediction game that runs as a Mini App inside Telegram. You predict whether the price closes above or below the round's start price."}},
+{"@type":"Question","name":"How long is a round?","acceptedAnswer":{"@type":"Answer","text":"Each round runs 45 seconds after a 15-second decision window — about one minute per cycle."}},
 {"@type":"Question","name":"What is Demo mode?","acceptedAnswer":{"@type":"Answer","text":"Demo mode uses virtual Demo SOL so you can learn the game. Demo SOL cannot be deposited, withdrawn or converted to real SOL, and you can reset it to 10.00 at any time."}},
 {"@type":"Question","name":"What is Live mode?","acceptedAnswer":{"@type":"Answer","text":"Live mode uses the SOL balance in your in-app wallet on Solana Mainnet. Trades are final once a round closes and you can lose your stake."}}
 ]}]}
@@ -52,12 +52,12 @@
   <div class="wrap">
     <div>
       <span class="kicker"><span class="dot"></span>Telegram Mini App · Solana</span>
-      <h1 id="h1">Predict the next crypto move. <em>In 60 seconds.</em></h1>
-      <p class="lead">PriceOn is a <strong>60-second crypto price prediction</strong> game inside <strong>Telegram</strong>. Call <strong>UP</strong> or <strong>DOWN</strong>, wait for the round, see the result.</p>
+      <h1 id="h1">Predict the next crypto move. <em>In one minute.</em></h1>
+      <p class="lead">PriceOn is a <strong>one-minute crypto price prediction</strong> game inside <strong>Telegram</strong>. Call <strong>UP</strong> or <strong>DOWN</strong> in 15 seconds, see the result 45 seconds later.</p>
       <div class="facts">
         <div class="fact"><b>SOL/USDC</b><span>Market</span></div>
         <div class="fact"><b>UP/DOWN</b><span>Your call</span></div>
-        <div class="fact"><b>60s</b><span>Round</span></div>
+        <div class="fact"><b>15s·45s</b><span>Timing</span></div>
         <div class="fact"><b>Telegram</b><span>Mini App</span></div>
       </div>
       <div class="ctas">
@@ -69,7 +69,7 @@
     <div class="stage">
       <div class="screen back"><img src="img/ui-result.webp" alt="PriceOn round in progress: your UP trade tracked against the round start price" width="420" height="652" loading="lazy"></div>
       <div class="screen main"><img src="img/ui-predict.webp" alt="PriceOn app: SOL/USDC live chart with PRICE UP and PRICE DOWN buttons and stake selector" width="420" height="652" fetchpriority="high"></div>
-      <div class="tag t1">⏱ 60-second rounds</div>
+      <div class="tag t1">⏱ 15s to call · 45s round</div>
       <div class="tag t2"><span class="t-up">↑ UP</span> or <span style="color:var(--down)">↓ DOWN</span> — you call it</div>
     </div>
   </div>
@@ -92,14 +92,14 @@
           <span class="n">01</span><span><h3>Choose</h3><p>Open the market and set your stake. Every round starts from a fixed start price.</p><span class="bar"><i></i></span></span>
         </button>
         <button class="step" role="tab" aria-selected="false" data-img="img/ui-predict.webp" data-alt="PriceOn PRICE UP and PRICE DOWN buttons">
-          <span class="n">02</span><span><h3>Predict</h3><p>Tap PRICE UP if you think it closes above the start — PRICE DOWN if below.</p><span class="bar"><i></i></span></span>
+          <span class="n">02</span><span><h3>Predict</h3><p>You have 15 seconds: PRICE UP if you think it closes above the start, PRICE DOWN if below.</p><span class="bar"><i></i></span></span>
         </button>
         <button class="step" role="tab" aria-selected="false" data-img="img/ui-result.webp" data-alt="PriceOn live round tracking your UP trade">
-          <span class="n">03</span><span><h3>Result</h3><p>After the 60-second round, the result settles and your balance updates.</p><span class="bar"><i></i></span></span>
+          <span class="n">03</span><span><h3>Result</h3><p>After the 45-second round, the result settles and your balance updates.</p><span class="bar"><i></i></span></span>
         </button>
       </div>
       <ol class="flow" aria-label="Full flow">
-        <li><b>Open PriceOn</b></li><li>Choose Demo or Live</li><li>Predict</li><li>Wait 60s</li><li>See the result</li><li>Play again or go Live</li>
+        <li><b>Open PriceOn</b></li><li>Choose Demo or Live</li><li>Predict</li><li>Wait 45s</li><li>See the result</li><li>Play again or go Live</li>
       </ol>
     </div>
     <div class="viewer rv">
@@ -196,8 +196,9 @@
       <h2 id="faq-h">Quick answers</h2>
     </div>
     <div class="faq">
-      <details data-q="what"><summary>What is PriceOn?</summary><p>A 60-second crypto price prediction game that runs as a Mini App inside Telegram.</p></details>
-      <details data-q="round"><summary>How does a round work?</summary><p>Each round has a start price. You choose your stake and tap PRICE UP or PRICE DOWN while the decision window is open. When the 60-second round ends, UP wins if the price closed above the start, DOWN wins if it closed below.</p></details>
+      <details data-q="what"><summary>What is PriceOn?</summary><p>A one-minute crypto price prediction game that runs as a Mini App inside Telegram.</p></details>
+      <details data-q="round"><summary>How does a round work?</summary><p>Each round has a start price. You choose your stake and tap PRICE UP or PRICE DOWN during the 15-second decision window. When the 45-second round ends, UP wins if the price closed above the start, DOWN wins if it closed below.</p></details>
+      <details data-q="length"><summary>How long is a round?</summary><p>45 seconds, after a 15-second decision window — about one minute per cycle.</p></details>
       <details data-q="assets"><summary>Which markets can I predict?</summary><p>Currently SOL/USDC. Available markets are always shown in the app.</p></details>
       <details data-q="start"><summary>How do I start?</summary><p>Tap “Play on Telegram”. PriceOn opens inside Telegram — choose Demo and make your first prediction.</p></details>
       <details data-q="telegram"><summary>Do I need Telegram?</summary><p>Yes. PriceOn runs only as a Telegram Mini App — no separate download or account.</p></details>
