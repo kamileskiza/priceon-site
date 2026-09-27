@@ -17,7 +17,6 @@ SITE = "https://priceon.tech"
 # code -> (url path, og locale). Order = order in the language menu.
 LANGS = {
     "en": ("/", "en_US"),
-    "tr": ("/tr/", "tr_TR"),
     "ar": ("/ar/", "ar_AE"),
     "hi": ("/hi/", "hi_IN"),
     "id": ("/id/", "id_ID"),
@@ -111,14 +110,10 @@ def main():
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
         'xmlns:xhtml="http://www.w3.org/1999/xhtml">' + urls + "\n</urlset>\n")
 
-    # auto-route the home page by browser language (nf_lang cookie = user's own choice wins)
-    rules = []
-    for c in available:
-        if c == "en":
-            continue
-        lang_code = "zh" if c == "zh-Hant" else c
-        rules.append(f"/  {LANGS[c][0]}  302!  Language={lang_code}")
-    open(os.path.join(DIST, "_redirects"), "w").write("\n".join(rules) + "\n")
+    # No browser-language auto-redirect: "/" is always English (main landing).
+    # Ads send each country straight to its language page, e.g. /id/?utm_...
+    # Old Turkish URL goes to English.
+    open(os.path.join(DIST, "_redirects"), "w").write("/tr/*  /  301!\n")
 
     for c, miss in report.items():
         print(f"{c:8} {'OK' if not miss else 'missing ' + str(len(miss)) + ' → English fallback: ' + ', '.join(miss[:6])}")
