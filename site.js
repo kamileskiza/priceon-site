@@ -9,6 +9,7 @@
     termsUrl: null,                 // [TERMS_URL]
     privacyUrl: null,               // [PRIVACY_URL]
     communityUrl: null,             // [OFFICIAL_COMMUNITY_URL] e.g. "https://t.me/priceoncommunity" — until set, community buttons open the bot
+    telegramChatUrl: null,          // [TELEGRAM_SUPPORT_URL] e.g. "https://t.me/priceon_support" — until set, the Telegram chat button opens the community (if set) or the bot
     whatsappUrl: null,              // [WHATSAPP_URL] e.g. "https://wa.me/90XXXXXXXXXX" — until set, WhatsApp buttons show a "coming soon" note
     xUrl: null                      // [OFFICIAL_X_URL]
   };
@@ -94,6 +95,14 @@
     a.href = PO.communityUrl || tgUrl("comm");
     a.rel = "noopener";
     a.addEventListener("click", function () { track("community_click", { placement: place, configured: !!PO.communityUrl }); });
+  });
+  document.querySelectorAll("[data-tgchat]").forEach(function (a) {
+    var place = a.getAttribute("data-tgchat");
+    a.href = PO.telegramChatUrl || PO.communityUrl || tgUrl("chat");
+    a.addEventListener("click", function () {
+      track("telegram_chat_click", { placement: place, configured: !!PO.telegramChatUrl });
+      track("telegram_click", { placement: "chat-" + place, link_mode: PO.linkMode });
+    });
   });
   var toast = document.querySelector(".wa-toast"), tt = null;
   document.querySelectorAll("[data-wa]").forEach(function (a) {
