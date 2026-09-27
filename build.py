@@ -8,7 +8,7 @@ language falls back to English, so the site never breaks when new copy is added.
 Netlify runs this on every push (see netlify.toml) and publishes ./dist.
 Run locally:  python3 build.py
 """
-import json, os, re, shutil, html
+import json, os, re, shutil, html, hashlib
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DIST = os.path.join(ROOT, "dist")
@@ -55,6 +55,9 @@ def main():
         f'<link rel="alternate" hreflang="{c}" href="{SITE}{LANGS[c][0]}">' for c in available
     ) + f'\n<link rel="alternate" hreflang="x-default" href="{SITE}/">'
 
+    # cache-busting: asset URLs change whenever css/js content changes
+    ver = hashlib.md5(b"".join(open(os.path.join(ROOT, f), "rb").read() for f in ["style.css", "site.js"])).hexdigest()[:8]
+
     report = {}
     for code in available:
         t = dict(en)
@@ -85,7 +88,7 @@ def main():
             "canonical": SITE + path, "alternates": alternates, "og_locale": locale,
             "lang_options": opts, "faq_html": faq_html,
             "ld_json": json.dumps(ld, ensure_ascii=False).replace("</", "<\\/"),
-            "tg_icon": TG, "tg_icon_plain": TG_PLAIN, "wa_icon": WA,
+            "ver": ver, "tg_icon": TG, "tg_icon_plain": TG_PLAIN, "wa_icon": WA,
         })
         out = re.sub(r"\{\{(\w[\w-]*)\}\}", lambda m: ctx.get(m.group(1), m.group(0)), tpl)
         left = re.findall(r"\{\{[\w-]+\}\}", out)
