@@ -19,6 +19,8 @@
 <meta property="og:locale" content="{{og_locale}}">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" as="image" href="{{base}}img/ui-predict.webp" type="image/webp">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=JetBrains+Mono:wght@500;600&display=swap">
 <link rel="stylesheet" href="{{base}}style.css?v={{ver}}">
 <script type="application/ld+json">{{ld_json}}</script>
 </head>
@@ -54,7 +56,7 @@
       </div>
       <div class="ctas">
         <a class="btn btn-gold" data-tg="hero" data-ev="hero_cta_click" href="https://t.me/priceonapp_bot">{{tg_icon}}{{cta_play}}</a>
-        <a class="btn btn-line" data-tg="hdemo" data-ev="demo_cta_click" href="https://t.me/priceonapp_bot">{{cta_demo}}</a>
+        <a class="btn btn-tg-ghost" data-tg="hdemo" data-ev="demo_cta_click" href="https://t.me/priceonapp_bot">{{cta_demo}}</a>
       </div>
       <p class="note">{{note}}</p>
     </div>
@@ -191,7 +193,7 @@
         <p class="sub">{{comm_p}}</p>
         <ul class="ticks"><li>{{comm_1}}</li><li>{{comm_2}}</li><li>{{comm_3}}</li></ul>
         <div class="comm-ctas">
-          <a class="btn btn-gold" data-comm="section" data-ev="community_cta_click" href="https://t.me/priceonapp_bot">{{tg_icon}}{{cta_comm}}</a>
+          <a class="btn btn-tg" data-comm="section" data-ev="community_cta_click" href="https://t.me/priceonapp_bot">{{tg_icon}}{{cta_comm}}</a>
           <a class="btn btn-line" data-wa="community" href="#" rel="noopener">{{wa_icon}}{{wa_label}}</a>
         </div>
       </div>
