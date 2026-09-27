@@ -8,7 +8,8 @@
     linkMode: "startapp",           // "startapp" = opens the Mini App directly, "start" = opens bot chat
     termsUrl: null,                 // [TERMS_URL]
     privacyUrl: null,               // [PRIVACY_URL]
-    communityUrl: null,             // [OFFICIAL_COMMUNITY_URL]
+    communityUrl: null,             // [OFFICIAL_COMMUNITY_URL] e.g. "https://t.me/priceoncommunity" — until set, community buttons open the bot
+    whatsappUrl: null,              // [WHATSAPP_URL] e.g. "https://wa.me/90XXXXXXXXXX" — until set, WhatsApp buttons show a "coming soon" note
     xUrl: null                      // [OFFICIAL_X_URL]
   };
   window.PO_CONFIG = PO;
@@ -85,6 +86,36 @@
     var el = document.querySelector('[data-link="' + x[0] + '"]');
     if (!el) return;
     if (x[1]) { el.href = x[1]; el.hidden = false; } else { el.hidden = true; }
+  });
+
+  /* Community + WhatsApp buttons */
+  document.querySelectorAll("[data-comm]").forEach(function (a) {
+    var place = a.getAttribute("data-comm");
+    a.href = PO.communityUrl || tgUrl("comm");
+    a.rel = "noopener";
+    a.addEventListener("click", function () { track("community_click", { placement: place, configured: !!PO.communityUrl }); });
+  });
+  var toast = document.querySelector(".wa-toast"), tt = null;
+  document.querySelectorAll("[data-wa]").forEach(function (a) {
+    var place = a.getAttribute("data-wa");
+    if (PO.whatsappUrl) { a.href = PO.whatsappUrl; a.target = "_blank"; }
+    a.addEventListener("click", function (e) {
+      track("whatsapp_click", { placement: place, configured: !!PO.whatsappUrl });
+      if (!PO.whatsappUrl) {
+        e.preventDefault();
+        if (toast) { toast.hidden = false; clearTimeout(tt); tt = setTimeout(function () { toast.hidden = true; }, 4000); }
+      }
+    });
+  });
+
+  /* Language menu — remembers the choice (Netlify nf_lang cookie overrides browser-language routing) */
+  var sel = document.querySelector(".lang-select");
+  if (sel) sel.addEventListener("change", function () {
+    var o = sel.options[sel.selectedIndex];
+    var code = (o.getAttribute("data-code") || "en").split("-")[0];
+    document.cookie = "nf_lang=" + code + ";path=/;max-age=31536000;samesite=lax";
+    track("language_change", { to: code });
+    location.href = o.value + location.search;
   });
 
   /* FAQ opens */

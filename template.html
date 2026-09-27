@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="{{lang}}" dir="{{dir}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{meta_title}}</title>
+<meta name="description" content="{{meta_desc}}">
+<meta name="theme-color" content="#0a0b10">
+<link rel="canonical" href="{{canonical}}">
+{{alternates}}
+<link rel="icon" href="{{base}}img/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="{{base}}img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PriceOn">
+<meta property="og:title" content="{{meta_title}}">
+<meta property="og:description" content="{{og_desc}}">
+<meta property="og:url" content="{{canonical}}">
+<meta property="og:image" content="https://priceon.tech/img/og.jpg">
+<meta property="og:locale" content="{{og_locale}}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="image" href="{{base}}img/ui-predict.webp" type="image/webp">
+<link rel="stylesheet" href="{{base}}style.css">
+<script type="application/ld+json">{{ld_json}}</script>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="{{home}}" aria-label="{{aria_home}}"><img src="{{base}}img/logo.png" alt="" width="30" height="30">PriceOn</a>
+    <nav class="nav-links" aria-label="{{aria_sections}}">
+      <a href="#how">{{nav_how}}</a><a href="#modes">{{nav_modes}}</a><a href="#deposit">{{nav_deposit}}</a><a href="#referral">{{nav_ref}}</a><a href="#community">{{nav_comm}}</a><a href="#faq">{{nav_faq}}</a>
+    </nav>
+    <div class="nav-right">
+      <label class="lang-wrap"><span class="sr">{{aria_lang}}</span>
+        <select class="lang-select" aria-label="{{aria_lang}}">{{lang_options}}</select>
+      </label>
+      <a class="btn btn-gold btn-sm" data-tg="nav" data-ev="nav_cta_click" href="https://t.me/priceonapp_bot">{{nav_play}}</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap">
+    <div>
+      <span class="kicker"><span class="dot"></span>{{kicker}}</span>
+      <h1 id="h1">{{h1}}</h1>
+      <p class="lead">{{lead}}</p>
+      <div class="facts">
+        <div class="fact"><b>SOL/USDC</b><span>{{fact_market}}</span></div>
+        <div class="fact"><b>{{fact_call_val}}</b><span>{{fact_call}}</span></div>
+        <div class="fact"><b>{{fact_timing_val}}</b><span>{{fact_timing}}</span></div>
+        <div class="fact"><b>Telegram</b><span>{{fact_miniapp}}</span></div>
+      </div>
+      <div class="ctas">
+        <a class="btn btn-gold" data-tg="hero" data-ev="hero_cta_click" href="https://t.me/priceonapp_bot">{{tg_icon}}{{cta_play}}</a>
+        <a class="btn btn-line" data-tg="hdemo" data-ev="demo_cta_click" href="https://t.me/priceonapp_bot">{{cta_demo}}</a>
+      </div>
+      <p class="note">{{note}}</p>
+    </div>
+    <div class="stage">
+      <div class="screen back"><img src="{{base}}img/ui-result.webp" alt="{{alt_result}}" width="420" height="652" loading="lazy"></div>
+      <div class="screen main"><img src="{{base}}img/ui-predict.webp" alt="{{alt_predict}}" width="420" height="652" fetchpriority="high"></div>
+      <div class="tag t1">{{tag1}}</div>
+      <div class="tag t2">{{tag2}}</div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="how" aria-labelledby="how-h">
+  <div class="wrap">
+    <div class="sec-head rv" data-view="how_it_works_view">
+      <p class="eyebrow">{{how_eyebrow}}</p>
+      <h2 id="how-h">{{how_h2}}</h2>
+      <p class="sub">{{how_sub}}</p>
+    </div>
+  </div>
+  <div class="wrap how">
+    <div>
+      <div class="steps" role="tablist">
+        <button class="step" role="tab" aria-selected="true" data-img="{{base}}img/ui-round.webp" data-alt="{{step1_alt}}">
+          <span class="n">01</span><span><h3>{{step1_h}}</h3><p>{{step1_p}}</p><span class="bar"><i></i></span></span>
+        </button>
+        <button class="step" role="tab" aria-selected="false" data-img="{{base}}img/ui-predict.webp" data-alt="{{step2_alt}}">
+          <span class="n">02</span><span><h3>{{step2_h}}</h3><p>{{step2_p}}</p><span class="bar"><i></i></span></span>
+        </button>
+        <button class="step" role="tab" aria-selected="false" data-img="{{base}}img/ui-result.webp" data-alt="{{step3_alt}}">
+          <span class="n">03</span><span><h3>{{step3_h}}</h3><p>{{step3_p}}</p><span class="bar"><i></i></span></span>
+        </button>
+      </div>
+      <ol class="flow" aria-label="{{flow_aria}}">
+        <li><b>{{flow1}}</b></li><li>{{flow2}}</li><li>{{flow3}}</li><li>{{flow4}}</li><li>{{flow5}}</li><li>{{flow6}}</li>
+      </ol>
+    </div>
+    <div class="viewer rv">
+      <div class="screen"><img id="step-shot" src="{{base}}img/ui-round.webp" alt="{{step1_alt}}" width="420" height="652" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section id="modes" aria-labelledby="modes-h">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">{{modes_eyebrow}}</p>
+      <h2 id="modes-h">{{modes_h2}}</h2>
+    </div>
+    <div class="modes">
+      <article class="mode demo rv" data-view="demo_section_view">
+        <div>
+          <span class="badge">{{demo_badge}}</span>
+          <h3>{{demo_h3}}</h3>
+          <p>{{demo_p}}</p>
+          <ul class="ticks"><li>{{demo_t1}}</li><li>{{demo_t2}}</li><li>{{demo_t3}}</li></ul>
+          <a class="btn btn-gold" data-tg="demo" data-ev="demo_cta_click" href="https://t.me/priceonapp_bot">{{cta_demo}}</a>
+        </div>
+        <div class="shot"><div class="screen"><img src="{{base}}img/ui-demo.webp" alt="{{alt_demo}}" width="420" height="652" loading="lazy"></div></div>
+      </article>
+      <article class="mode live rv" data-view="live_section_view">
+        <div>
+          <span class="badge">{{live_badge}}</span>
+          <h3>{{live_h3}}</h3>
+          <p>{{live_p}}</p>
+          <ul class="ticks"><li>{{live_t1}}</li><li>{{live_t2}}</li><li class="warn">{{live_t3}}</li></ul>
+          <a class="btn btn-line" data-tg="live" data-ev="live_cta_click" href="https://t.me/priceonapp_bot">{{cta_live}}</a>
+        </div>
+        <div class="shot"><div class="screen"><img src="{{base}}img/ui-live.webp" alt="{{alt_live}}" width="420" height="652" loading="lazy"></div></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="deposit" aria-labelledby="dep-h">
+  <div class="wrap dep">
+    <div class="rv" data-view="deposit_section_view">
+      <p class="eyebrow">{{dep_eyebrow}}</p>
+      <h2 id="dep-h">{{dep_h2}}</h2>
+      <p class="sub">{{dep_sub}}</p>
+      <ol class="numlist">
+        <li><b>{{dep_1_h}}</b><span>{{dep_1_p}}</span></li>
+        <li><b>{{dep_2_h}}</b><span>{{dep_2_p}}</span></li>
+        <li><b>{{dep_3_h}}</b><span>{{dep_3_p}}</span></li>
+      </ol>
+      <p class="fine warn-line">{{dep_note}}</p>
+    </div>
+    <div class="shot-wrap rv">
+      <div class="screen annot"><img src="{{base}}img/ui-live.webp" alt="{{alt_deposit}}" width="420" height="652" loading="lazy">
+        <span class="ring" aria-hidden="true"></span><span class="callout">{{dep_callout}}</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="referral" aria-labelledby="ref-h">
+  <div class="wrap">
+    <div class="ref rv" data-view="referral_section_view">
+      <div>
+        <p class="eyebrow">{{ref_eyebrow}}</p>
+        <h2 id="ref-h">{{ref_h2}}</h2>
+        <p class="sub" style="margin-bottom:6px">{{ref_sub}}</p>
+        <ol class="numlist">
+          <li><b>{{ref_s1_h}}</b><span>{{ref_s1_p}}</span></li>
+          <li><b>{{ref_s2_h}}</b><span>{{ref_s2_p}}</span></li>
+          <li><b>{{ref_s3_h}}</b><span>{{ref_s3_p}}</span></li>
+          <li><b>{{ref_s4_h}}</b><span>{{ref_s4_p}}</span></li>
+        </ol>
+        <a class="btn btn-gold" data-tg="ref" data-ev="referral_cta_click" href="https://t.me/priceonapp_bot">{{cta_ref}}</a>
+      </div>
+      <div class="shot"><div class="screen"><img src="{{base}}img/ui-referral.webp" alt="{{alt_ref}}" width="420" height="652" loading="lazy"></div></div>
+    </div>
+    <div class="metrics rv">
+      <h3>{{ref_m_title}}</h3>
+      <div class="mgrid">
+        <div class="m"><b>{{ref_m1_h}}</b><p>{{ref_m1_p}}</p></div>
+        <div class="m"><b>{{ref_m2_h}}</b><p>{{ref_m2_p}}</p></div>
+        <div class="m"><b>{{ref_m3_h}}</b><p>{{ref_m3_p}}</p></div>
+      </div>
+      <p class="fine">{{ref_fine}}</p>
+    </div>
+  </div>
+</section>
+
+<section id="community" aria-labelledby="comm-h">
+  <div class="wrap">
+    <div class="comm rv" data-view="community_section_view">
+      <div class="comm-ic" aria-hidden="true">{{tg_icon_plain}}</div>
+      <div class="comm-body">
+        <p class="eyebrow">{{comm_eyebrow}}</p>
+        <h2 id="comm-h">{{comm_h2}}</h2>
+        <p class="sub">{{comm_p}}</p>
+        <ul class="ticks"><li>{{comm_1}}</li><li>{{comm_2}}</li><li>{{comm_3}}</li></ul>
+        <div class="comm-ctas">
+          <a class="btn btn-gold" data-comm="section" data-ev="community_cta_click" href="https://t.me/priceonapp_bot">{{tg_icon}}{{cta_comm}}</a>
+          <a class="btn btn-line" data-wa="community" href="#" rel="noopener">{{wa_icon}}{{wa_label}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="trust" aria-labelledby="trust-h">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">{{trust_eyebrow}}</p>
+      <h2 id="trust-h">{{trust_h2}}</h2>
+    </div>
+    <div class="trust-wrap">
+      <div class="trust">
+        <div class="tcard rv"><div class="ic">{{tg_icon_plain}}</div><h3>{{tr1_h}}</h3><p>{{tr1_p}}</p></div>
+        <div class="tcard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h13l3-3M20 17H7l-3 3M4 12h16"/></svg></div><h3>{{tr2_h}}</h3><p>{{tr2_p}}</p></div>
+        <div class="tcard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg></div><h3>{{tr3_h}}</h3><p>{{tr3_p}}</p></div>
+        <div class="tcard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 15l6-6M9.5 9.5h.01M14.5 14.5h.01"/></svg></div><h3>{{tr4_h}}</h3><p>{{tr4_p}}</p></div>
+        <div class="tcard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="8" height="14" rx="2"/><rect x="13" y="5" width="8" height="14" rx="2"/></svg></div><h3>{{tr5_h}}</h3><p>{{tr5_p}}</p></div>
+        <div class="tcard rv"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg></div><h3>{{tr6_h}}</h3><p>{{tr6_p}}</p></div>
+      </div>
+      <figure class="ledger rv">
+        <img src="{{base}}img/ui-history.webp" alt="{{alt_history}}" width="420" height="333" loading="lazy">
+        <figcaption>{{ledger_cap}}</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">{{faq_eyebrow}}</p>
+      <h2 id="faq-h">{{faq_h2}}</h2>
+    </div>
+    <div class="faq">{{faq_html}}</div>
+  </div>
+</section>
+
+<section class="final" aria-labelledby="final-h">
+  <div class="wrap">
+    <h2 id="final-h">{{final_h2}}</h2>
+    <a class="btn btn-gold" data-tg="final" data-ev="final_cta_click" href="https://t.me/priceonapp_bot">{{tg_icon}}{{cta_play}}</a>
+    <p class="sub">{{final_sub}}</p>
+    <a class="wa-inline" data-wa="final" href="#" rel="noopener">{{wa_icon}}{{wa_title}}</a>
+  </div>
+</section>
+
+<div class="wrap" style="padding-bottom:40px">
+  <aside class="risk" id="risk" aria-labelledby="risk-h">
+    <h2 id="risk-h">{{risk_h2}}</h2>
+    <p>{{risk_p1}}</p>
+    <p>{{risk_p2}}</p>
+  </aside>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="row">
+      <a class="brand" href="{{home}}"><img src="{{base}}img/logo.png" alt="" width="30" height="30" loading="lazy">PriceOn</a>
+      <nav aria-label="{{foot_aria}}">
+        <a data-tg="foot" href="https://t.me/priceonapp_bot">Telegram · @priceonapp_bot</a>
+        <a data-wa="foot" href="#" rel="noopener">{{wa_label}}</a>
+        <a href="https://instagram.com/priceon_app" rel="noopener">Instagram</a>
+        <a data-comm="foot" href="https://t.me/priceonapp_bot">{{foot_community}}</a>
+        <a data-link="x" hidden>X</a>
+        <a data-link="terms" hidden>{{foot_terms}}</a>
+        <a data-link="privacy" hidden>{{foot_privacy}}</a>
+        <a href="#risk">{{foot_risk}}</a>
+      </nav>
+    </div>
+    <p class="legal">{{legal}} © 2026 PriceOn</p>
+  </div>
+</footer>
+
+<a class="wa-fab" data-wa="fab" href="#" rel="noopener" aria-label="{{wa_title}}" title="{{wa_title}}">{{wa_icon}}</a>
+<div class="wa-toast" role="status" hidden>{{wa_soon}}</div>
+
+<div class="sticky">
+  <a class="btn btn-gold" data-tg="sticky" data-ev="sticky_cta_click" href="https://t.me/priceonapp_bot">{{tg_icon}}{{cta_play}}</a>
+</div>
+
+<script src="{{base}}site.js" defer></script>
+</body>
+</html>
