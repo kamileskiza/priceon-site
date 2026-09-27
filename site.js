@@ -7,7 +7,7 @@
     bot: "priceonapp_bot",          // official bot (verified)
     linkMode: "startapp",           // "startapp" = opens the Mini App directly, "start" = opens bot chat
     termsUrl: null,                 // [TERMS_URL]
-    privacyUrl: null,               // [PRIVACY_URL]
+    privacyUrl: "/privacy/",
     communityUrl: null,             // [OFFICIAL_COMMUNITY_URL] e.g. "https://t.me/priceoncommunity" — until set, community buttons open the bot
     telegramChatUrl: null,          // [TELEGRAM_SUPPORT_URL] e.g. "https://t.me/priceon_support" — until set, the Telegram chat button opens the community (if set) or the bot
     whatsappUrl: null,              // [WHATSAPP_URL] e.g. "https://wa.me/90XXXXXXXXXX" — until set, WhatsApp buttons show a "coming soon" note

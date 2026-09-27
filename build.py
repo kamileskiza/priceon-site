@@ -103,9 +103,17 @@ def main():
             shutil.copy(os.path.join(ROOT, f), DIST)
     shutil.copytree(os.path.join(ROOT, "img"), os.path.join(DIST, "img"))
 
+    # standalone English pages (privacy etc.)
+    for page in ["privacy"]:
+        src = os.path.join(ROOT, page + ".html")
+        if os.path.exists(src):
+            os.makedirs(os.path.join(DIST, page), exist_ok=True)
+            open(os.path.join(DIST, page, "index.html"), "w", encoding="utf-8").write(
+                open(src, encoding="utf-8").read().replace("{{ver}}", ver))
+
     # sitemap with hreflang alternates
     links = "".join(f'\n    <xhtml:link rel="alternate" hreflang="{c}" href="{SITE}{LANGS[c][0]}"/>' for c in available)
-    urls = "".join(f"\n  <url>\n    <loc>{SITE}{LANGS[c][0]}</loc>{links}\n  </url>" for c in available)
+    urls = "".join(f"\n  <url>\n    <loc>{SITE}{LANGS[c][0]}</loc>{links}\n  </url>" for c in available) + f"\n  <url>\n    <loc>{SITE}/privacy/</loc>\n  </url>"
     open(os.path.join(DIST, "sitemap.xml"), "w", encoding="utf-8").write(
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
         'xmlns:xhtml="http://www.w3.org/1999/xhtml">' + urls + "\n</urlset>\n")
